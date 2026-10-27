@@ -12,6 +12,8 @@ IDE + emulador **x86 do 80386 ao Pentium** (modo real 16/32 bits e modo protegid
 - **Precisão:** núcleo validado contra os vetores do SingleStepTests (8086/8088, 80286 e 80386 em modo real).
 - **Projetos de vários arquivos:** `INCLUDE` e módulos por `PUBLIC`/`EXTRN` viram um só programa, com erros apontando o arquivo e a linha; exporta **.EXE** e converte **EXE → COM/BIN**.
 - **Explorador de pastas reais:** adicione pastas existentes, crie, renomeie, mova e exclua (Lixeira) direto no disco; configuração do projeto em `evo.project.json`.
+- **Navegação no projeto:** a execução segue o arquivo onde parou, Listagem e Símbolos filtram por arquivo, busca em todos os arquivos (Ctrl+Shift+F), Salvar tudo e salvamento automático. Renomear ou mover um arquivo atualiza os `INCLUDE`.
+- **Listagem `.LST`, mapa `.MAP` e objeto `.OBJ` (OMF):** exporte-os, ligue `.obj` de TASM/MASM/NASM e resolva `EXTRN` do seu `.asm` com bibliotecas `.obj`. `PROC FAR` e chamadas entre segmentos de código, e `ASSUME` verificado.
 - **GROUP** (DGROUP/CGROUP) como no MASM/TASM, inclusive o modelo tiny que gera `.COM`.
 - Executa no **QEMU** (com GDB), no **DOSBox-X** com seus compiladores DOS nativos e tem **terminal WSL** integrado.
 
@@ -20,6 +22,10 @@ IDE + emulador **x86 do 80386 ao Pentium** (modo real 16/32 bits e modo protegid
 ![Depuração passo a passo](screenshots/03-depuracao-passo-a-passo.png)
 
 ![Projeto de dois arquivos, com a árvore de pastas reais e a aba Projeto](screenshots/04-projeto-multiarquivo.png)
+
+![Busca em todos os arquivos do projeto](screenshots/05-busca-no-projeto.png)
+
+![Menu de contexto do Explorador de pastas](screenshots/06-menu-de-contexto.png)
 
 ## Download
 Na página **[Releases](../../releases/latest)**, em *Assets*:
