@@ -15,6 +15,9 @@ IDE + emulador **x86 do 80386 ao Pentium** (modo real 16/32 bits e modo protegid
 - **Navegação no projeto:** a execução segue o arquivo onde parou, Listagem e Símbolos filtram por arquivo, busca em todos os arquivos (Ctrl+Shift+F), Salvar tudo e salvamento automático. Renomear ou mover um arquivo atualiza os `INCLUDE`.
 - **Listagem `.LST`, mapa `.MAP` e objeto `.OBJ` (OMF):** exporte-os, ligue `.obj` de TASM/MASM/NASM e resolva `EXTRN` do seu `.asm` com bibliotecas `.obj`. `PROC FAR` e chamadas entre segmentos de código, e `ASSUME` verificado.
 - **GROUP** (DGROUP/CGROUP) como no MASM/TASM, inclusive o modelo tiny que gera `.COM`.
+- **Dispositivos virtuais:** semáforo, termômetro com aquecedor, robô num labirinto e impressora LPT1 (INT 17h), todos com painel visual; mais as portas do emu8086 (semáforo de 4 vias, motor de passo, display LED, E/S simples) ligadas por `#start=...#`.
+- **Compatibilidade com os exemplos do emu8086:** 83 de 84 exemplos montam (diretivas em hexadecimal, tamanhos inferidos, macros e `emu8086.inc` com `PTHIS`, `CLEAR_SCREEN`, `PRINT_NUM_UNS`).
+- **DOS virtual e `evoemu.inc`:** arquivos e memória pela INT 21h, biblioteca própria de procedimentos, visualizador de registradores em hex/decimal/binário.
 - Executa no **QEMU** (com GDB), no **DOSBox-X** com seus compiladores DOS nativos e tem **terminal WSL** integrado.
 
 ![Tela gráfica VGA ao lado do editor, com a paleta animada](screenshots/02-tela-ao-lado.png)
@@ -26,6 +29,9 @@ IDE + emulador **x86 do 80386 ao Pentium** (modo real 16/32 bits e modo protegid
 ![Busca em todos os arquivos do projeto](screenshots/05-busca-no-projeto.png)
 
 ![Menu de contexto do Explorador de pastas](screenshots/06-menu-de-contexto.png)
+
+![Painel Dispositivos: semáforo, termômetro e robô no labirinto](screenshots/07-dispositivos-placa.png)
+
 
 ## Download
 Na página **[Releases](../../releases/latest)**, em *Assets*:
