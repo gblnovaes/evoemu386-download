@@ -8,7 +8,8 @@ IDE + emulador **x86 do 80386 ao Pentium** (modo real 16/32 bits e modo protegid
 - **Editor** com realce de sintaxe, minimapa, pontos de interrupção e vários arquivos.
 - **Montador** para MASM, TASM, FASM e NASM, com exemplos prontos (hello, SIB, strings, modo protegido, paginação, troca de tarefa, CPUID, x87…).
 - **Depurador:** passo a passo, passo sobre, voltar um passo, registradores de 32 bits e flags, pilha, memória, observação de variáveis e desmontagem.
-- **Tela de texto 80×25** que pode ficar embaixo, ao lado do editor, em modo foco (tela cheia) ou em **janela própria** ao executar.
+- **Tela de texto 80×25** que pode ficar embaixo, ao lado do editor, em modo foco (tela cheia) ou em **janela própria** ao executar (com barra de execução e cursor piscante).
+- **FASM e NASM diferenciam maiúsculas nos símbolos** (`d` e `D` são nomes diferentes); `#fasm#` do emu8086 escolhe o dialeto FASM. A BIOS traz a data em `F000:FFF5`.
 - **Precisão:** núcleo validado contra os vetores do SingleStepTests (8086/8088, 80286 e 80386 em modo real).
 - **Projetos de vários arquivos:** `INCLUDE` e módulos por `PUBLIC`/`EXTRN` viram um só programa, com erros apontando o arquivo e a linha; exporta **.EXE** e converte **EXE → COM/BIN**.
 - **Explorador de pastas reais:** adicione pastas existentes, crie, renomeie, mova e exclua (Lixeira) direto no disco; configuração do projeto em `evo.project.json`.
@@ -16,7 +17,7 @@ IDE + emulador **x86 do 80386 ao Pentium** (modo real 16/32 bits e modo protegid
 - **Listagem `.LST`, mapa `.MAP` e objeto `.OBJ` (OMF):** exporte-os, ligue `.obj` de TASM/MASM/NASM e resolva `EXTRN` do seu `.asm` com bibliotecas `.obj`. `PROC FAR` e chamadas entre segmentos de código, e `ASSUME` verificado.
 - **GROUP** (DGROUP/CGROUP) como no MASM/TASM, inclusive o modelo tiny que gera `.COM`.
 - **Dispositivos virtuais:** semáforo, termômetro com aquecedor, robô num labirinto e impressora LPT1 (INT 17h), todos com painel visual; mais as portas do emu8086 (semáforo de 4 vias, motor de passo, display LED, E/S simples) ligadas por `#start=...#`.
-- **Compatibilidade com os exemplos do emu8086:** 83 de 84 exemplos montam (diretivas em hexadecimal, tamanhos inferidos, macros e `emu8086.inc` com `PTHIS`, `CLEAR_SCREEN`, `PRINT_NUM_UNS`).
+- **Compatibilidade com os exemplos do emu8086:** os 84 exemplos montam, até na CPU 8086 (instruções do 80186 aceitas com aviso, `.MODEL` ausente assumido como SMALL, diretivas em hexadecimal, tamanhos inferidos, macros e `emu8086.inc`).
 - **DOS virtual e `evoemu.inc`:** arquivos e memória pela INT 21h, biblioteca própria de procedimentos, visualizador de registradores em hex/decimal/binário.
 - Executa no **QEMU** (com GDB), no **DOSBox-X** com seus compiladores DOS nativos e tem **terminal WSL** integrado.
 
@@ -31,6 +32,12 @@ IDE + emulador **x86 do 80386 ao Pentium** (modo real 16/32 bits e modo protegid
 ![Menu de contexto do Explorador de pastas](screenshots/06-menu-de-contexto.png)
 
 ![Painel Dispositivos: semáforo, termômetro e robô no labirinto](screenshots/07-dispositivos-placa.png)
+
+![Aba DOSBox, com montagem pelo EvoEmu386 e janela sempre à frente](screenshots/08-dosbox.png)
+
+![Tela destacada em janela própria](screenshots/09-tela-destacada.png)
+
+![Avisos do montador para programas no estilo emu8086](screenshots/10-avisos-montador.png)
 
 
 ## Download
